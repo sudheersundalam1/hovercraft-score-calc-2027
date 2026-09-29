@@ -8,78 +8,99 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Hover Score">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Hovercraft Score</title>
+<title>Hovercraft Score 2027</title>
 <style>
 :root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:#f1f5f9;color:#0f172a}
-*{box-sizing:border-box} body{margin:0;background:#f1f5f9;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
-header{background:#0f172a;color:white;padding:calc(14px + env(safe-area-inset-top)) 16px 14px}
-header h1{font-size:19px;margin:0} header p{font-size:12px;margin:3px 0 0;color:#cbd5e1}
+*{box-sizing:border-box}body{margin:0;background:#f1f5f9;padding-bottom:calc(18px + env(safe-area-inset-bottom))}
+header{background:#0f172a;color:#fff;padding:calc(14px + env(safe-area-inset-top)) 16px 14px}
+header h1{font-size:19px;margin:0}header p{font-size:12px;margin:3px 0 0;color:#cbd5e1}
 main{max-width:600px;margin:auto;padding:10px}.card{background:#fff;border-radius:15px;padding:13px;margin-bottom:10px;box-shadow:0 1px 3px #00000012}
 .section-title{font-size:12px;font-weight:800;color:#64748b;letter-spacing:.06em;margin-bottom:9px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
 label{display:block;font-size:12px;font-weight:700;color:#475569;margin-bottom:4px}
 input,select,button{font:inherit;font-size:17px;border-radius:11px;min-height:46px}
 input,select{width:100%;border:1px solid #cbd5e1;padding:9px;background:#fff;color:#0f172a}
 .biginput{font-size:24px;font-weight:750;text-align:center}
-.segment{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.segment{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .segment button,.quick button{border:1px solid #cbd5e1;background:#f8fafc;color:#0f172a;font-weight:700;padding:8px}
 .segment button.active,.quick button.active{background:#0f172a;color:#fff;border-color:#0f172a}
 .quick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}.quick button{font-size:13px;min-height:40px}
 .check{display:flex;align-items:center;gap:9px;padding:7px 0}.check input{width:22px;height:22px;min-height:auto}.check label{margin:0;font-size:14px;color:#0f172a}
+.note{font-size:11px;color:#64748b;line-height:1.35;margin-top:6px}
 .scoreCard{background:#0f172a;color:#fff;border-radius:16px;padding:15px;margin-bottom:10px}
 .scoreTop{display:flex;justify-content:space-between;align-items:end;gap:10px}.total{font-size:52px;font-weight:850;line-height:.95;letter-spacing:-2px}.outof{font-size:14px;color:#94a3b8}
 .scoreGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:14px}.scoreBox{background:#1e293b;border-radius:11px;padding:9px;text-align:center}
 .scoreBox b{font-size:21px;display:block}.scoreBox span{font-size:10px;color:#cbd5e1}.detail{font-size:12px;color:#cbd5e1;margin-top:10px}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.actions button{border:0;background:#0f172a;color:#fff;font-weight:800}.actions .secondary{background:#e2e8f0;color:#0f172a}
-.saved{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.run{border:1px solid #e2e8f0;border-radius:11px;padding:9px}.run b{font-size:25px}
-.best{font-weight:800;margin:10px 0 0}.warn{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:9px;border-radius:9px;font-size:12px;margin-top:8px}
+.primary{width:100%;border:0;background:#0f172a;color:#fff;font-weight:800}.secondary{width:100%;border:0;background:#e2e8f0;color:#0f172a;font-weight:800}
+.saved{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:9px}.run{border:1px solid #e2e8f0;border-radius:11px;padding:9px;min-height:84px}.run b{font-size:22px}.run small{display:block;color:#64748b;margin-top:3px}
+.best{font-weight:800;margin:10px 0 4px}.warn{background:#fff7ed;color:#9a3412;border:1px solid #fed7aa;padding:9px;border-radius:9px;font-size:12px;margin-top:8px}
+.error{background:#fef2f2;color:#991b1b;border-color:#fecaca}.ok{background:#f0fdf4;color:#166534;border-color:#bbf7d0}
 details summary{font-size:13px;font-weight:800;cursor:pointer}.penaltyGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.tiegrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.tiebox{background:#f8fafc;border-radius:9px;padding:8px;font-size:12px}.tiebox b{display:block;font-size:18px}
 footer{text-align:center;color:#64748b;font-size:10px;padding:3px 10px 10px}
-@media(max-width:360px){.total{font-size:44px}.quick{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:380px){.total{font-size:44px}.quick{grid-template-columns:repeat(2,1fr)}.segment{grid-template-columns:1fr}.saved{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><h1>Hovercraft Score</h1><p>2026–27 • Competition calculator</p></header>
+<header><h1>Hovercraft Score</h1><p>Science Olympiad 2027 • Division B • Official rules</p></header>
 <main>
 
 <section class="card">
-<div class="section-title">TIME</div>
+<div class="section-title">TARGET TIME</div>
 <div class="grid2">
-<div><label for="tt">Target Time</label><input class="biginput" id="tt" type="number" inputmode="decimal" step=".1" value="12.0"></div>
-<div><label for="runtime">Runtime</label><input class="biginput" id="runtime" type="number" inputmode="decimal" step=".01" value="12.00"></div>
+<div>
+<label for="level">Tournament level</label>
+<select id="level"><option value="regional">Regional</option><option value="state" selected>State / National</option></select>
 </div>
+<div>
+<label for="tt">Target Time (seconds)</label>
+<input class="biginput" id="tt" type="number" inputmode="decimal" min="6" max="18" step=".5" value="12.0">
+</div>
+</div>
+<div id="ttWarn" class="warn" style="display:none"></div>
 </section>
 
 <section class="card">
 <div class="section-title">RUN RESULT</div>
-<div class="segment"><button id="completeBtn" class="active">✓ Complete</button><button id="incompleteBtn">Incomplete</button></div>
-<div id="distanceWrap" style="display:none;margin-top:9px"><label for="distance">Distance from finish line (cm)</label><input class="biginput" id="distance" type="number" inputmode="decimal" min="0" max="185" step=".1" value="50"></div>
+<div class="segment">
+<button id="completeBtn" class="active">✓ Complete</button>
+<button id="incompleteBtn">Incomplete</button>
+<button id="touchedBtn">Touched → 0</button>
+</div>
+<div id="runtimeWrap" style="margin-top:9px">
+<label for="runtime">Runtime (seconds)</label>
+<input class="biginput" id="runtime" type="number" inputmode="decimal" min="0" step=".01" value="12.00">
+</div>
+<div id="distanceWrap" style="display:none;margin-top:9px">
+<label for="distance">Distance from finish line measured by ES (cm)</label>
+<input class="biginput" id="distance" type="number" inputmode="decimal" min="0" step=".1" value="50">
+<div class="note">Use Incomplete when the Event Supervisor declares the run incomplete (including no movement for 3 seconds or failure to finish within 2 × TT).</div>
+</div>
 </section>
 
 <section class="card">
-<div class="section-title">NICKEL LOAD</div>
+<div class="section-title">MASS COUNTED FOR THIS RUN</div>
 <div class="grid2">
-<div><label for="rolls">Full rolls</label><select id="rolls"><option>0</option><option>1</option><option>2</option><option>3</option><option selected>4</option></select></div>
-<div><label for="nickels">Loose nickels</label><input id="nickels" type="number" inputmode="numeric" min="0" max="20" step="1" value="20"></div>
+<div><label for="rolls">Full rolls counted</label><select id="rolls"><option>0</option><option>1</option><option>2</option><option>3</option><option selected>4</option></select></div>
+<div><label for="nickels">Loose nickels counted</label><input id="nickels" type="number" inputmode="numeric" min="0" max="20" step="1" value="20"></div>
 </div>
-<div class="check"><input id="half" type="checkbox" checked><label for="half">Add half roll (+0.5 roll)</label></div>
+<div class="check"><input id="half" type="checkbox" checked><label for="half">Half roll counted (+0.5 roll)</label></div>
 <div class="quick">
-<button data-load="0">No mass</button>
-<button data-load="2">2 rolls</button>
-<button data-load="4">4 rolls</button>
-<button data-load="max" class="active">MAX</button>
+<button data-load="0">No mass</button><button data-load="2">2 rolls</button><button data-load="4">4 rolls</button><button data-load="max" class="active">MAX</button>
 </div>
+<div class="check"><input id="falloff" type="checkbox"><label for="falloff">A vehicle part and/or mass fell off during the run</label></div>
+<div class="note">Fall-off causes one construction penalty for the run. Rolls/nickels that fall off before the ES tells the team to turn off the vehicle do not count toward Mass Score, so enter only countable mass above.</div>
 </section>
 
 <section class="card">
-<div class="check"><input id="ramp" type="checkbox"><label for="ramp"><b>Ramp used</b> — MS becomes 0; DS is halved</label></div>
+<div class="check"><input id="ramp" type="checkbox"><label for="ramp"><b>Ramp used</b> — MS = 0 and DS × 0.5</label></div>
 <details>
-<summary>Penalties</summary>
+<summary>Other penalties</summary>
 <div class="penaltyGrid">
-<div><label for="construction">Construction</label><input id="construction" type="number" inputmode="numeric" min="0" step="1" value="0"></div>
-<div><label for="competition">Competition</label><input id="competition" type="number" inputmode="numeric" min="0" step="1" value="0"></div>
+<div><label for="construction">Other construction violations</label><input id="construction" type="number" inputmode="numeric" min="0" step="1" value="0"></div>
+<div><label for="competition">Competition violations</label><input id="competition" type="number" inputmode="numeric" min="0" step="1" value="0"></div>
 </div>
-<div class="check"><input id="impound" type="checkbox"><label for="impound">Missed impound ×0.70</label></div>
+<div class="check"><input id="impound" type="checkbox"><label for="impound">Missed impound (×0.70)</label></div>
 </details>
 </section>
 
@@ -95,47 +116,220 @@ footer{text-align:center;color:#64748b;font-size:10px;padding:3px 10px 10px}
 
 <section class="card">
 <div class="section-title">COMPETITION RUNS</div>
-<div class="actions"><button id="save1">Save as Run 1</button><button id="save2">Save as Run 2</button></div>
-<div class="saved"><div class="run">RUN 1<br><b id="run1">—</b></div><div class="run">RUN 2<br><b id="run2">—</b></div></div>
-<p class="best">Best Run Score: <span id="best">—</span></p>
-<button id="clear" class="secondary" style="width:100%;border:0;margin-top:4px">Clear Runs</button>
+<button id="saveNext" class="primary">Save This Run</button>
+<div class="saved">
+<div class="run">RUN 1<br><b id="run1">—</b><small id="run1meta"></small></div>
+<div class="run">RUN 2<br><b id="run2">—</b><small id="run2meta"></small></div>
+<div class="run">RUN 3<br><b id="run3">—</b><small id="run3meta"></small></div>
+</div>
+<p class="best">Final Score (Best Run): <span id="best">0.00</span></p>
+<div id="runLimit" class="warn ok" style="display:none"></div>
+<button id="clear" class="secondary" style="margin-top:8px">Clear Saved Runs</button>
+
+<details style="margin-top:10px">
+<summary>Tie-break data from saved runs</summary>
+<div class="tiegrid">
+<div class="tiebox">1st: Best TS<b id="tbTS">—</b></div>
+<div class="tiebox">2nd: Most construction violations in any run<b id="tbCV">—</b></div>
+<div class="tiebox">3rd: Best MS<b id="tbMS">—</b></div>
+<div class="tiebox">4th: 2nd Best Run Score<b id="tbSecond">—</b></div>
+</div>
+</details>
+<div class="note">Competition time ends after two complete runs or two incomplete runs, or when the 8-minute limit is reached. Therefore a team can have up to three counted runs (for example, Complete → Incomplete → Complete).</div>
 </section>
 
-<section class="card"><details><summary>Scoring formulas</summary>
-<p style="font-size:12px">Complete: DS = 40. TS = max(0, 40 × (1 − |Runtime − TT| / TT)).</p>
-<p style="font-size:12px">Incomplete: DS = 40 × (185 − distance from finish) / 185; TS = 0.</p>
-<p style="font-size:12px">MS = (4R + 0.1N) × distance fraction. Half roll = R 0.5.</p>
-<p style="font-size:12px">Ramp: MS = 0 and DS × 0.5.</p>
-<p style="font-size:12px">Penalties: missed impound ×0.70; each construction violation ×0.80; each competition violation ×0.90.</p>
-</details></section>
+<section class="card">
+<details>
+<summary>Official scoring formulas implemented</summary>
+<p style="font-size:12px"><b>Final Score = Best Run Score.</b> Run Score = DS + TS + MS.</p>
+<p style="font-size:12px"><b>Distance Score:</b> Complete DS = 40. Incomplete DS = 40 × (185 − distance from finish in cm) / 185. If ramp is used, DS × 0.5.</p>
+<p style="font-size:12px"><b>Time Score:</b> Complete TS = 40 × (1 − |Runtime − TT| / TT), with minimum TS = 0. Incomplete TS = 0.</p>
+<p style="font-size:12px"><b>Mass Score:</b> MS = (4R + 0.1N) × (185 − distance from finish in cm) / 185. Half roll counts as R = 0.5. Complete-run maximum MS = 20. Ramp MS = 0.</p>
+<p style="font-size:12px"><b>Penalties:</b> missed impound ×0.70; each construction violation ×0.80; each competition violation ×0.90, applied to DS, TS and MS.</p>
+<p style="font-size:12px"><b>Touch/interference:</b> counted as a complete run with DS = TS = MS = 0.</p>
+<p style="font-size:12px"><b>No-start case:</b> if the dowel does not cross the start line within 3 seconds of launch, it does not count as a run and should not be saved here.</p>
+</details>
+</section>
 </main>
-<footer>Based on the 2026–27 draft rules. Verify against final rules before competition.</footer>
+
+<footer>v2.1 • Official Science Olympiad 2027 Hovercraft Division B rules</footer>
+
 <script>
 (()=>{"use strict";
-const $=x=>document.getElementById(x);let complete=true,current=0;
-const num=(id,d=0)=>{let x=parseFloat($(id).value);return Number.isFinite(x)?x:d},clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
-function selectQuick(v){document.querySelectorAll("[data-load]").forEach(b=>b.classList.toggle("active",b.dataset.load===v))}
-function calc(){
- let tt=Math.max(.01,num("tt",12)),rt=Math.max(0,num("runtime",0)),d=complete?0:clamp(num("distance",185),0,185),f=(185-d)/185;
- let ds=40*f,ts=complete?Math.max(0,40*(1-Math.abs(rt-tt)/tt)):0;
- let rolls=clamp(Math.round(num("rolls")),0,4),half=$("half").checked?.5:0,nickels=clamp(Math.round(num("nickels")),0,20);
- let ms=(4*(rolls+half)+.1*nickels)*f;
- if($("ramp").checked){ds*=.5;ms=0}
- let pf=Math.pow(.8,Math.max(0,Math.floor(num("construction"))))*Math.pow(.9,Math.max(0,Math.floor(num("competition"))))*($("impound").checked?.7:1);
- ds*=pf;ts*=pf;ms*=pf;current=ds+ts+ms;
- $("ds").textContent=ds.toFixed(2);$("ts").textContent=ts.toFixed(2);$("ms").textContent=ms.toFixed(2);$("total").textContent=current.toFixed(2);
- $("detail").textContent=complete?`Time error ${Math.abs(rt-tt).toFixed(2)} s • R=${(rolls+half).toFixed(1)} • N=${nickels}`:`Travel ${(185-d).toFixed(1)} / 185 cm • R=${(rolls+half).toFixed(1)} • N=${nickels}`;
- let w=[];if($("ramp").checked)w.push("Ramp selected.");if(pf<1)w.push(`Penalty multiplier ×${pf.toFixed(4)}.`);
- $("warn").style.display=w.length?"block":"none";$("warn").textContent=w.join(" ");
+const $=x=>document.getElementById(x);
+let status="complete", current=null;
+const STORE="hoverRunsOfficial2027v2";
+const num=(id,d=0)=>{const x=parseFloat($(id).value);return Number.isFinite(x)?x:d};
+const int=(id,d=0)=>Math.max(0,Math.floor(num(id,d)));
+
+function setQuick(v){
+ document.querySelectorAll("[data-load]").forEach(b=>b.classList.toggle("active",b.dataset.load===v));
 }
-function setComplete(x){complete=x;$("completeBtn").classList.toggle("active",x);$("incompleteBtn").classList.toggle("active",!x);$("distanceWrap").style.display=x?"none":"block";calc()}
-$("completeBtn").onclick=()=>setComplete(true);$("incompleteBtn").onclick=()=>setComplete(false);
-["tt","runtime","distance","rolls","nickels","half","ramp","construction","competition","impound"].forEach(id=>{$(id).addEventListener("input",calc);$(id).addEventListener("change",calc)});
-document.querySelectorAll("[data-load]").forEach(b=>b.onclick=()=>{let v=b.dataset.load;if(v==="0"){$("rolls").value=0;$("half").checked=false;$("nickels").value=0}else if(v==="2"){$("rolls").value=2;$("half").checked=false;$("nickels").value=0}else if(v==="4"){$("rolls").value=4;$("half").checked=false;$("nickels").value=0}else{$("rolls").value=4;$("half").checked=true;$("nickels").value=20}selectQuick(v);calc()});
-function refresh(){let s=JSON.parse(localStorage.getItem("hoverRuns27")||"{}");$("run1").textContent=s.r1==null?"—":s.r1.toFixed(2);$("run2").textContent=s.r2==null?"—":s.r2.toFixed(2);let a=[s.r1,s.r2].filter(Number.isFinite);$("best").textContent=a.length?Math.max(...a).toFixed(2):"—"}
-function save(k){let s=JSON.parse(localStorage.getItem("hoverRuns27")||"{}");s[k]=current;localStorage.setItem("hoverRuns27",JSON.stringify(s));refresh()}
-$("save1").onclick=()=>save("r1");$("save2").onclick=()=>save("r2");$("clear").onclick=()=>{localStorage.removeItem("hoverRuns27");refresh()};
-calc();refresh();if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
+
+function currentConstructionCount(){
+ return int("construction",0)+($("falloff").checked?1:0);
+}
+
+function setScore(ds,ts,ms,total){
+ $("ds").textContent=ds;
+ $("ts").textContent=ts;
+ $("ms").textContent=ms;
+ $("total").textContent=total;
+}
+
+function calculate(){
+ const tt=num("tt",12);
+ const rt=Math.max(0,num("runtime",0));
+ const level=$("level").value;
+ const rangeValid=tt>=6 && tt<=18;
+ const intervalValid=level==="regional" ? Math.abs(tt-Math.round(tt))<1e-9 : Math.abs(tt*2-Math.round(tt*2))<1e-9;
+ const ttValid=rangeValid && intervalValid;
+ $("tt").step=level==="regional"?"1":".5";
+ $("ttWarn").style.display=ttValid?"none":"block";
+ if(!rangeValid) $("ttWarn").textContent="Official Division B Target Time must be between 6.0 and 18.0 seconds.";
+ else $("ttWarn").textContent=level==="regional" ? "Regional Target Time must be in 1.0-second intervals." : "State/National Target Time must be in 0.5-second intervals.";
+
+ if(status==="touched"){
+   const cv=currentConstructionCount(), pv=int("competition",0), pf=Math.pow(.8,cv)*Math.pow(.9,pv)*($("impound").checked?.7:1);
+   current={status:"complete",displayStatus:"Touched",score:0,ds:0,ts:0,ms:0,construction:cv,competition:pv,penaltyFactor:pf};
+   setScore("0.00","0.00","0.00","0.00");
+   $("detail").textContent="Touched/interfered after hands-off: counted as a complete run with DS, TS and MS = 0.";
+   $("warn").style.display="none";
+   return;
+ }
+
+ if(status==="complete" && rt>2*tt){
+   current=null;
+   setScore("—","—","—","—");
+   $("detail").textContent="";
+   $("warn").className="warn error";
+   $("warn").style.display="block";
+   $("warn").textContent=`This cannot be a Complete run: ${rt.toFixed(2)} s exceeds 2 × TT (${(2*tt).toFixed(2)} s). Select Incomplete and enter the Event Supervisor's measured distance from the finish line.`;
+   return;
+ }
+
+ const complete=status==="complete";
+ const d=complete?0:Math.max(0,num("distance",0));
+ const distanceFactor=(185-d)/185;
+
+ let ds=complete?40:40*distanceFactor;
+ let ts=complete?40*(1-Math.abs(rt-tt)/tt):0;
+ ts=Math.max(0,ts);
+
+ const full=Math.min(4,Math.max(0,Math.round(num("rolls",0))));
+ const half=$("half").checked?.5:0;
+ const loose=Math.min(20,Math.max(0,Math.round(num("nickels",0))));
+ const R=full+half, N=loose;
+ let ms=(4*R+.1*N)*distanceFactor;
+
+ if($("ramp").checked){ds*=.5;ms=0;}
+
+ const cv=currentConstructionCount();
+ const pv=int("competition",0);
+ const pf=Math.pow(.8,cv)*Math.pow(.9,pv)*($("impound").checked?.7:1);
+
+ ds*=pf;ts*=pf;ms*=pf;
+ const score=ds+ts+ms;
+ current={status:complete?"complete":"incomplete",displayStatus:complete?"Complete":"Incomplete",score,ds,ts,ms,construction:cv,competition:pv,penaltyFactor:pf};
+
+ setScore(ds.toFixed(2),ts.toFixed(2),ms.toFixed(2),score.toFixed(2));
+ $("detail").textContent=complete
+   ?`Time error ${Math.abs(rt-tt).toFixed(2)} s • R=${R.toFixed(1)} • N=${N}`
+   :`Distance from finish ${d.toFixed(1)} cm • R=${R.toFixed(1)} • N=${N}`;
+
+ const w=[];
+ if(!ttValid) w.push("Target Time is outside the official Division B range.");
+ if(d>185 && !complete) w.push("Distance exceeds 185 cm; the official formula is being applied exactly and can produce negative DS/MS.");
+ if($("ramp").checked) w.push("Ramp selected: DS ×0.5 and MS = 0.");
+ if($("falloff").checked) w.push("Fall-off: +1 construction violation.");
+ if(pf<1) w.push(`Penalty multiplier ×${pf.toFixed(4)}.`);
+ $("warn").className="warn";
+ $("warn").style.display=w.length?"block":"none";
+ $("warn").textContent=w.join(" ");
+}
+
+function setStatus(x){
+ status=x;
+ $("completeBtn").classList.toggle("active",x==="complete");
+ $("incompleteBtn").classList.toggle("active",x==="incomplete");
+ $("touchedBtn").classList.toggle("active",x==="touched");
+ $("runtimeWrap").style.display=x==="complete"?"block":"none";
+ $("distanceWrap").style.display=x==="incomplete"?"block":"none";
+ calculate();
+}
+
+function getRuns(){
+ try{return JSON.parse(localStorage.getItem(STORE)||"[]")}catch(e){return[]}
+}
+function setRuns(runs){localStorage.setItem(STORE,JSON.stringify(runs))}
+
+function reachedRunLimit(runs){
+ const completeCount=runs.filter(r=>r.status==="complete").length;
+ const incompleteCount=runs.filter(r=>r.status==="incomplete").length;
+ return completeCount>=2 || incompleteCount>=2 || runs.length>=3;
+}
+
+function refreshRuns(){
+ const runs=getRuns();
+ for(let i=0;i<3;i++){
+   const r=runs[i], scoreEl=$(`run${i+1}`), metaEl=$(`run${i+1}meta`);
+   if(r){scoreEl.textContent=r.score.toFixed(2);metaEl.textContent=`${r.displayStatus} • TS ${r.ts.toFixed(2)} • MS ${r.ms.toFixed(2)}`;}
+   else{scoreEl.textContent="—";metaEl.textContent="";}
+ }
+ const scores=runs.map(r=>r.score).sort((a,b)=>b-a);
+ $("best").textContent=scores.length?scores[0].toFixed(2):"0.00";
+
+ const bestTS=runs.length?Math.max(...runs.map(r=>r.ts)):null;
+ const maxCV=runs.length?Math.max(...runs.map(r=>r.construction)):null;
+ const bestMS=runs.length?Math.max(...runs.map(r=>r.ms)):null;
+ $("tbTS").textContent=bestTS==null?"—":bestTS.toFixed(2);
+ $("tbCV").textContent=maxCV==null?"—":String(maxCV);
+ $("tbMS").textContent=bestMS==null?"—":bestMS.toFixed(2);
+ $("tbSecond").textContent=scores.length>=2?scores[1].toFixed(2):"—";
+
+ const limit=reachedRunLimit(runs);
+ $("saveNext").disabled=limit;
+ $("saveNext").style.opacity=limit?".45":"1";
+ $("runLimit").style.display=limit?"block":"none";
+ if(limit){
+   const c=runs.filter(r=>r.status==="complete").length, inc=runs.filter(r=>r.status==="incomplete").length;
+   $("runLimit").textContent=c>=2?"Two complete runs reached — competition runs end.":inc>=2?"Two incomplete runs reached — competition runs end.":"Maximum counted runs reached.";
+ }
+}
+
+function saveNext(){
+ const runs=getRuns();
+ if(reachedRunLimit(runs)){refreshRuns();return;}
+ if(!current || !Number.isFinite(current.score)){alert("Fix the run status before saving.");return;}
+ runs.push(current);
+ setRuns(runs);
+ refreshRuns();
+}
+
+$("completeBtn").onclick=()=>setStatus("complete");
+$("incompleteBtn").onclick=()=>setStatus("incomplete");
+$("touchedBtn").onclick=()=>setStatus("touched");
+
+["level","tt","runtime","distance","rolls","nickels","half","falloff","ramp","construction","competition","impound"].forEach(id=>{
+ $(id).addEventListener("input",calculate);
+ $(id).addEventListener("change",calculate);
+});
+
+document.querySelectorAll("[data-load]").forEach(b=>b.onclick=()=>{
+ const v=b.dataset.load;
+ if(v==="0"){$("rolls").value=0;$("half").checked=false;$("nickels").value=0;}
+ else if(v==="2"){$("rolls").value=2;$("half").checked=false;$("nickels").value=0;}
+ else if(v==="4"){$("rolls").value=4;$("half").checked=false;$("nickels").value=0;}
+ else{$("rolls").value=4;$("half").checked=true;$("nickels").value=20;}
+ setQuick(v);calculate();
+});
+
+$("saveNext").onclick=saveNext;
+$("clear").onclick=()=>{localStorage.removeItem(STORE);refreshRuns();};
+
+calculate();refreshRuns();
+if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
 })();
 </script>
-</body></html>
+</body>
+</html>

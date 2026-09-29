@@ -1,20 +1,33 @@
-HOVERCRAFT SCORE — GITHUB DEPLOYMENT
+HOVERCRAFT SCORE 2027 — OFFICIAL DIVISION B RULES
 
-1. Create a new GitHub repository, for example: hovercraft-score
-2. Upload these three files to the ROOT of the repository:
-   index.html
-   manifest.webmanifest
-   sw.js
-3. GitHub repository -> Settings -> Pages
-4. Under Build and deployment choose:
-   Source: Deploy from a branch
-   Branch: main
-   Folder: / (root)
-5. Save.
-6. GitHub will show your Pages website URL after deployment.
-7. Open that URL in Safari on iPhone.
-8. Share -> Add to Home Screen.
-9. Open the installed app once while online.
-10. It can then operate offline.
+Replace these files in the ROOT of your existing GitHub Pages repository:
+- index.html
+- manifest.webmanifest
+- sw.js
 
-Do NOT upload the ZIP itself as the website. Unzip it first and upload the three files above.
+You do NOT need to change GitHub Pages settings.
+
+After GitHub finishes deploying:
+1. Open the site in Safari while online.
+2. Refresh the page once.
+3. Close the Home Screen app completely.
+4. Reopen it.
+5. Confirm the footer says:
+   v2.1 • Official Science Olympiad 2027 Hovercraft Division B rules
+6. Test once in Airplane Mode.
+
+
+Important competition-run handling included:
+- Division B TT validation: 6.0–18.0 s
+- Complete/incomplete scoring
+- >2×TT cannot be scored as complete
+- Touch/interference => complete run with DS=TS=MS=0
+- Fall-off => one construction penalty
+- Fallen mass is excluded from MS by entering only countable mass
+- Ramp scoring
+- Missed-impound/construction/competition penalty multipliers
+- Up to three counted runs because competition ends after TWO complete OR TWO incomplete runs
+- Final Score = Best Run Score
+- Tie-break data from saved runs
+
+- Validates TT intervals: 1.0 s at Regionals; 0.5 s at State/Nationals.
