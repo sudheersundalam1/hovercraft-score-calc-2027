@@ -1,0 +1,10 @@
+{
+  "name": "Hovercraft Score 2026\u201327",
+  "short_name": "Hover Score",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f9",
+  "theme_color": "#0f172a",
+  "description": "Offline Science Olympiad Hovercraft competition score calculator."
+}
